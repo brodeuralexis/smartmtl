@@ -3,7 +3,7 @@ An aggregator that aggregates the range of values encoutered.
 "
 Class {
 	#name : #SMRangeAggregator,
-	#superclass : #Object,
+	#superclass : #SMAggregator,
 	#instVars : [
 		'minimum',
 		'maximum',

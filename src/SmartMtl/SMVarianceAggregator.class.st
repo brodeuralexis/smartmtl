@@ -3,7 +3,7 @@ An aggregator that collects information about the variance of all provided value
 "
 Class {
 	#name : #SMVarianceAggregator,
-	#superclass : #Object,
+	#superclass : #SMAggregator,
 	#instVars : [
 		'mean',
 		'm2',

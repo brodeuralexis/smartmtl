@@ -4,7 +4,7 @@ An aggregator of values that averages all values until they are collected from t
 "
 Class {
 	#name : #SMAverageAggregator,
-	#superclass : #Object,
+	#superclass : #SMAggregator,
 	#instVars : [
 		'average',
 		'size'
