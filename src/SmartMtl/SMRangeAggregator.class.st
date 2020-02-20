@@ -6,8 +6,7 @@ Class {
 	#superclass : #SMAggregator,
 	#instVars : [
 		'minimum',
-		'maximum',
-		'size'
+		'maximum'
 	],
 	#category : #'SmartMtl-Aggregators'
 }
@@ -32,10 +31,11 @@ SMRangeAggregator >> collect [
 
 { #category : #initialization }
 SMRangeAggregator >> initialize [
+	"Initializes this range aggregator."
 	self reset.
 ]
 
-{ #category : #initialization }
+{ #category : #aggregation }
 SMRangeAggregator >> reset [
 	"Resets the state of this aggregator."
 	minimum := Float infinity.

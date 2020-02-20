@@ -6,8 +6,7 @@ Class {
 	#name : #SMAverageAggregator,
 	#superclass : #SMAggregator,
 	#instVars : [
-		'average',
-		'size'
+		'average'
 	],
 	#category : #'SmartMtl-Aggregators'
 }
@@ -31,10 +30,11 @@ SMAverageAggregator >> collect [
 
 { #category : #initialization }
 SMAverageAggregator >> initialize [
+	"Initializes this average aggregator."
 	self reset.
 ]
 
-{ #category : #initialization }
+{ #category : #aggregation }
 SMAverageAggregator >> reset [
 	"Resets the aggregation state of the aggregator."
 	average := 0.

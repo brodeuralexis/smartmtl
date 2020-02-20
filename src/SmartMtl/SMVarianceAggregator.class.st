@@ -6,22 +6,20 @@ Class {
 	#superclass : #SMAggregator,
 	#instVars : [
 		'mean',
-		'm2',
-		'size'
+		'm2'
 	],
 	#category : #'SmartMtl-Aggregators'
 }
 
 { #category : #aggregation }
 SMVarianceAggregator >> aggregate: value [
+	"Aggregates the state associated with this aggregator to calculate the variance using Welford's algorithm."
 	|n m|
 	size := size + 1.
 	n := value - mean.
 	mean := mean + (n / size).
 	m := value - mean.
 	m2 := m2 + (n * m).
-	
-	
 ]
 
 { #category : #aggregation }
@@ -40,11 +38,13 @@ SMVarianceAggregator >> collect [
 
 { #category : #initialization }
 SMVarianceAggregator >> initialize [
+	"Initializes this variance aggregator."
 	self reset.
 ]
 
-{ #category : #initialization }
+{ #category : #aggregation }
 SMVarianceAggregator >> reset [
+	"Resets the state of this aggregator."
 	mean := 0.
 	size := 0.
 	m2 := 0.
