@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #accessing }
-SMAggregator >> aggregate: arg1 [ 
+SMAggregator >> aggregate: value [ 
 	^ self subclassResponsibility
 ]
 
