@@ -74,6 +74,20 @@ SMTopicTest >> testEqualReturnsTrueIf2TopicsHaveTheSameValues [
 ]
 
 { #category : #tests }
+SMTopicTest >> testHashDoesNotReturnsTheSameThingFor2TopicThatAreNotEqual [
+	|other|
+	other := topic clone system: 'infra'; yourself.
+	self deny: (topic hash) equals: (other hash).
+]
+
+{ #category : #tests }
+SMTopicTest >> testHashReturnsTheSameThingFor2TopicThatAreEqual [
+	|other|
+	other := topic clone.
+	self assert: (topic hash) equals: (other hash).
+]
+
+{ #category : #tests }
 SMTopicTest >> testNodeReturnsTheNode [
 	self assert: (topic node) equals: 'zone5/class1/vehicle-speed'.
 ]
