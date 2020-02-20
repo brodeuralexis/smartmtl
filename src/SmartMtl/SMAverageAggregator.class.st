@@ -23,7 +23,7 @@ SMAverageAggregator >> aggregate: value [
 SMAverageAggregator >> collect [
 	"Collects the result of this aggregator."
 	|anAverage|
-	(size == 0) ifTrue: [ ^nil. ].
+	(size = 0) ifTrue: [ ^nil. ].
 	anAverage := average.
 	self reset.
 	^anAverage.

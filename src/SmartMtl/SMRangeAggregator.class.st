@@ -24,7 +24,7 @@ SMRangeAggregator >> aggregate: value [
 SMRangeAggregator >> collect [
 	"Collects the state aggregated by this aggregator."
 	|range|
-	(size == 0) ifTrue: [ ^nil. ].
+	(size = 0) ifTrue: [ ^nil. ].
 	range := minimum to: maximum.
 	self reset.
 	^range.

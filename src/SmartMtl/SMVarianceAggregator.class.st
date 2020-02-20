@@ -28,8 +28,8 @@ SMVarianceAggregator >> aggregate: value [
 SMVarianceAggregator >> collect [
 	"Collects the state associated with this aggregator."
 	|result|
-	(size == 0) ifTrue: [ ^nil. ].
-	(size == 1) ifTrue: [
+	(size = 0) ifTrue: [ ^nil. ].
+	(size = 1) ifTrue: [
 		self reset.
 		^0.
 	].
